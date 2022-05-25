@@ -1,0 +1,132 @@
+<!DOCTYPE html>>
+<html>
+    <head>
+        <title>ABOUT EMT</title>
+        <meta charset="utf-8">
+        <style>
+             #divcontainer{
+                width: 100%;
+                height: 60vh;
+                margin-top: auto;
+                border: 10px groove turquoise;
+                border-radius: 15px;
+                margin-top: 25px;
+            }
+            #slide{
+                border-radius: 5px;
+                width: 100%;
+                height: 100%;
+            }
+            #tittle{
+                text-align: center;
+                
+            }
+            #divplaces{
+                border: 1px solid;
+                border: hidden;
+                width: 17%;
+                height: 200px;
+                float: left;
+            }
+            #divtimes{
+                border: 1px solid;
+                border: hidden;
+                width: 17%;
+                height: 200px;
+                float: right;
+            }
+            #information{
+                border: 1px solid;
+                border: hidden;
+                width: 100%;
+                height: 300px;
+                margin:1px;
+                background-image: linear-gradient(to right, rgba(152, 172, 175, 0.596), rgba(60, 161, 179, 0.836), rgba(169, 186, 190, 0.575));
+            }
+            #promote{
+                
+                margin-left: 500px;
+            }
+            .logo{
+               border: 1px solid turquoise;
+               text-align: center;
+               border: hidden;
+               width: 100%;
+               height: 25px;
+               float: left;
+               font-size: large;
+               margin-top: 2px;
+               font-size:15px;
+               border-radius: 7px;
+               background-image: linear-gradient(to right, rgba(164, 180, 120, 0.548), rgba(50, 153, 167, 0.822), rgba(140, 155, 99, 0.575));
+            }
+             
+        </style>
+    </head>
+    <body>
+        <div id="logoo">
+            <a class="logo" href="index.html" target="_self" >E M T</a>
+        </div>
+        <div id="divcontainer">
+            <img id="slide" src="About EMT()" alt="Gallery Images" title="ENGROSS MOVIES THEATER" onerror="this.src=null; this.src='aboutimages/slides/image_10.jpg'">
+        </div>
+        <div id="information">
+        <div id="tittle">
+            <h1>ENGROSS_MOVIES_THEATER</h1>
+        </div>
+        <div id="divinfor">
+            <div id="divplaces">
+            <ol>
+                <li class="infor"><h3>Location</h3></li>
+                <ul>
+                    <li>Riverwalk 2D</li>
+                    <li>Masa 2D</li>
+                    <li>Acacia Platform 2D</li>
+                </ul>
+            </ol>
+            </div>
+            <div id="promote">
+                <p><h4>Welcome and thank you for your interest in Engross Movies Theater</h4></p>
+                <p>We offer best services for your best interest</p>
+            </div>
+            <div id="divtimes">
+            <ol>
+                <li class="infor"><h3>Usual Movie Times</h3></li>
+                <ul>
+                    <li>11:00</li>
+                    <li>14:30</li>
+                    <li>17:30</li>
+                    <li>20:30</li>
+                </ul>
+            </ol>
+            </div>
+        </div>
+        </div>
+        <script>
+            //STEP 1: - create array to hold slideshow images
+            var arrgallery = new Array();
+
+            //STEP 2: - load images into array
+            var k; //variable controlling the loop
+            for(k=0; k<10; k++){
+                arrgallery[k] = `aboutimages/slides/image_${k+1}.jpg`
+            }
+
+            //STEP 3: - declare variable to control looping of images / slideshow
+            var imgIndex = 0;
+
+            //STEP 4: - load the image for the slideshow and increment imgIndex
+            function slideshow(){
+                document.getElementById("slide").setAttribute("src", arrgallery[imgIndex]);
+                imgIndex = (imgIndex < arrgallery.length)? imgIndex + 1 : 0;
+                //alert(`NOW AT POSITION : ${imgIndex}`);
+            }
+
+            //STEP 5: - set timer interval, number of seconds for an image to display
+            window.onload = function(){
+                setInterval("slideshow()", 5000); //setTimeout("slideshow()", 10000); //1second = 1000ms
+            }
+               
+        </script>
+    </body>
+</html>
